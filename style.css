@@ -1,0 +1,1010 @@
+/* ===========================
+ESTILOS GENERALES
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+color:#333;
+overflow-x:hidden;
+}
+
+/* ===========================
+PORTADA
+=========================== */
+
+#portada{
+
+position:relative;
+
+width:100%;
+
+height:100vh;
+
+background-image:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("assets/images/portada.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+animation:zoom 18s ease-in-out infinite alternate;
+
+}
+
+#portada{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#portada::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("assets/images/portada.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    animation:zoomPortada 18s ease-in-out infinite alternate;
+
+    z-index:0;
+
+}
+
+.contenido-portada{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.oscuro{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.15);
+
+}
+
+.contenido-portada{
+
+position:relative;
+
+z-index:2;
+
+max-width:850px;
+
+padding:40px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.intro{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:42px;
+
+line-height:1.3;
+
+margin-bottom:20px;
+
+opacity:0;
+
+animation:aparecer 1.5s forwards;
+
+animation-delay:.5s;
+
+}
+
+.intro2{
+
+font-size:22px;
+
+line-height:1.7;
+
+max-width:720px;
+
+margin:0 auto 40px;
+
+opacity:0;
+
+animation:aparecer 1.5s forwards;
+
+animation-delay:2.5s;
+
+}
+
+.contenido-portada h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:72px;
+
+font-weight:500;
+
+line-height:1.15;
+
+margin-bottom:25px;
+
+opacity:0;
+
+animation:aparecer 1.5s forwards;
+
+animation-delay:4.5s;
+
+}
+
+.contenido-portada h1 span{
+
+display:block;
+
+font-size:46px;
+
+margin:10px 0;
+
+}
+
+.contenido-portada h2{
+
+font-weight:300;
+
+font-size:26px;
+
+letter-spacing:3px;
+
+margin-bottom:45px;
+
+opacity:0;
+
+animation:aparecer 1.5s forwards;
+
+animation-delay:6s;
+
+}
+
+#btnComenzar{
+
+padding:18px 42px;
+
+border:none;
+
+border-radius:50px;
+
+background:#C8A96A;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.35s;
+
+opacity:0;
+
+animation:aparecer 1.5s forwards;
+
+animation-delay:7.5s;
+
+}
+
+#btnComenzar:hover{
+
+transform:scale(1.06);
+
+}
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.contenido-portada h1{
+
+font-size:48px;
+
+}
+
+.contenido-portada h1 span{
+
+font-size:34px;
+
+}
+
+.intro{
+
+font-size:30px;
+
+}
+
+.intro2{
+
+font-size:18px;
+
+}
+
+.contenido-portada h2{
+
+font-size:20px;
+
+}
+
+#btnComenzar{
+
+width:90%;
+
+}
+
+}/* ===== NUESTRA HISTORIA ===== */
+
+.historia{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:70px;
+padding:120px 8%;
+background:#fdfaf6;
+overflow:hidden;
+}
+
+.historia-imagen{
+flex:1;
+opacity:0;
+transform:translateX(-80px);
+transition:1.2s;
+}
+
+.historia-imagen img{
+width:100%;
+max-width:430px;
+border-radius:25px;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.historia-texto{
+flex:1;
+opacity:0;
+transform:translateX(80px);
+transition:1.2s;
+}
+
+.historia-texto h2{
+font-size:48px;
+margin-bottom:25px;
+color:#9b7b50;
+}
+
+.historia-texto p{
+font-size:20px;
+line-height:1.9;
+color:#555;
+margin-bottom:20px;
+}
+
+.historia.mostrar .historia-imagen,
+.historia.mostrar .historia-texto{
+opacity:1;
+transform:translateX(0);
+}/* ===== CUENTA REGRESIVA ===== */
+
+.contador{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#f5eee5;
+text-align:center;
+}
+
+.contador h2{
+font-size:55px;
+color:#9b7b50;
+margin-bottom:60px;
+}
+
+.tiempo{
+display:flex;
+gap:35px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.tiempo div{
+width:160px;
+height:160px;
+border-radius:25px;
+background:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.tiempo span{
+font-size:55px;
+font-weight:bold;
+color:#9b7b50;
+}
+
+.tiempo p{
+margin-top:12px;
+font-size:20px;
+color:#666;
+
+transform:scale(1.05);
+
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* ==========================
+NUESTROS RECUERDOS
+========================== */
+
+.galeria{
+padding:120px 0;
+background:#fff;
+overflow:hidden;
+}
+
+.galeria h2{
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-size:56px;
+color:#9b7b50;
+margin-bottom:60px;
+}
+
+.carrusel{
+width:100%;
+overflow:hidden;
+position:relative;
+padding:20px 0;
+}
+
+.carrusel::before,
+.carrusel::after{
+content:"";
+position:absolute;
+top:0;
+width:180px;
+height:100%;
+z-index:5;
+pointer-events:none;
+}
+
+.carrusel::before{
+left:0;
+background:linear-gradient(to right,#fff 0%,transparent 100%);
+}
+
+.carrusel::after{
+right:0;
+background:linear-gradient(to left,#fff 0%,transparent 100%);
+}
+
+.slider{
+display:flex;
+width:max-content;
+animation:scroll 42s linear infinite;
+}
+
+.slider:hover{
+animation-play-state:paused;
+}
+
+.slider img{
+
+width:320px;
+
+height:430px;
+
+object-fit:cover;
+
+margin:0 14px;
+
+border-radius:24px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.18);
+
+transition:.5s;
+
+opacity:.75;
+
+transform:scale(.88);
+
+}
+
+.slider img:hover{
+
+opacity:1;
+
+transform:scale(1.08);
+
+box-shadow:0 28px 60px rgba(0,0,0,.28);
+
+}
+
+@keyframes scroll{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-50%);
+}
+
+}
+
+@media(max-width:768px){
+
+.slider img{
+
+width:220px;
+
+height:300px;
+
+margin:0 10px;
+
+}
+
+.galeria h2{
+
+font-size:42px;
+
+}
+
+}
+
+.slider img{
+
+width:300px;
+
+height:420px;
+
+object-fit:cover;
+
+border-radius:24px;
+
+margin:0 12px;
+
+flex-shrink:0;
+
+opacity:.75;
+
+transform:scale(.88);
+
+transition:.6s;
+
+box-shadow:0 18px 40px rgba(0,0,0,.18);
+
+}
+.slider img:hover{
+
+opacity:1;
+
+transform:scale(1.05);
+
+box-shadow:0 25px 60px rgba(0,0,0,.28);
+
+}/* ===== FRASE FINAL HISTORIA ===== */
+
+.frase-final{
+
+    margin-top:35px;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:30px;
+
+    font-style:italic;
+
+    color:#9b7b50;
+
+    line-height:1.6;
+
+    text-align:center;
+
+}/* =====================================
+   CEREMONIA - RECEPCIÓN
+===================================== */
+
+.evento{
+
+    padding:120px 8%;
+
+    background:#fdfaf6;
+
+}
+
+.evento h2{
+
+    text-align:center;
+
+    font-size:55px;
+
+    color:#9b7b50;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:60px;
+
+}
+
+.tarjetas-evento{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.tarjeta{
+
+    width:420px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.tarjeta h3{
+
+    font-size:34px;
+
+    color:#9b7b50;
+
+    margin-bottom:25px;
+
+}
+
+.tarjeta p{
+
+    margin-bottom:18px;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+.boton-evento{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    background:#C8A96A;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.boton-evento:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* =====================================
+   CONFIRMACIÓN
+===================================== */
+
+.confirmacion{
+
+    padding:120px 8%;
+
+    text-align:center;
+
+    background:white;
+
+}
+
+.confirmacion h2{
+
+    font-size:52px;
+
+    color:#9b7b50;
+
+    margin-bottom:30px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.confirmacion p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+.btn-whatsapp{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.btn-whatsapp:hover{
+
+    transform:scale(1.05);
+
+}
+
+@media(max-width:768px){
+
+    .tarjeta{
+
+        width:100%;
+
+    }
+
+}.lugar{
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+
+}
+
+.descripcion{
+
+    line-height:1.8;
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}.mensaje-evento{
+
+    margin:25px 0 30px;
+
+    font-style:italic;
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}/* Título de las tarjetas */
+
+.titulo-evento{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.titulo-evento .icono{
+
+    font-size:38px;
+
+    margin:0;
+
+}
+
+.titulo-evento h3{
+
+    margin:0;
+
+    color:#9b7b50;
+
+    font-size:48px;
+
+    font-weight:600;
+
+}/* ===== DESPEDIDA ===== */
+
+.despedida{
+
+    margin-top:80px;
+
+    text-align:center;
+
+}
+
+.despedida p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+.despedida span{
+
+    display:block;
+
+    font-size:38px;
+
+    color:#C8A96A;
+
+    margin:30px 0;
+
+}
+
+.despedida h3{
+
+    font-weight:300;
+
+    color:#777;
+
+    margin-bottom:10px;
+
+}
+
+.despedida h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:48px;
+
+    color:#9b7b50;
+
+}/* ==========================
+   DESPEDIDA
+========================== */
+
+.despedida{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    padding-bottom:80px;
+
+}
+
+.despedida p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+.adorno{
+
+    font-size:42px;
+
+    color:#C8A96A;
+
+    margin:35px 0;
+
+}
+
+.despedida h3{
+
+    font-weight:300;
+
+    color:#777;
+
+    margin-bottom:10px;
+
+}
+
+.despedida h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:52px;
+
+    color:#9b7b50;
+
+    font-weight:500;
+
+}/* ==========================
+   BOTÓN MÚSICA
+========================== */
+
+.btn-musica{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#C8A96A;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.btn-musica:hover{
+
+    transform:scale(1.08);
+
+} /*==========================
+SEPARADOR PORTADA
+==========================*/
+
+.separador-portada{
+
+    font-size:42px;
+
+    color:#E7D2A3;
+
+    margin:20px 0;
+
+    animation:aparecer 2s forwards;
+
+    animation-delay:6s;
+
+    opacity:0;
+
+}@keyframes respirar{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+#btnComenzar{
+    animation:
+        aparecer 1.5s forwards,
+        respirar 2.5s ease-in-out infinite;
+    animation-delay:
+        7.5s,
+        9s;
+}
