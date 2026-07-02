@@ -7,10 +7,22 @@ const musica = document.getElementById("musica");
 
 if (boton) {
 
-    boton.addEventListener("click", () => {
+  boton.addEventListener("click", () => {
 
-    document.getElementById("historia").scrollIntoView({
-        behavior:"instant"
+    if(musica){
+
+        musica.play().then(() => {
+            btnMusica.textContent="🔊";
+        }).catch(()=>{});
+
+    }
+
+    const destino=document.getElementById("historia").offsetTop;
+
+    window.scroll({
+        top: destino,
+        left:0,
+        behavior:"smooth"
     });
 
 });
